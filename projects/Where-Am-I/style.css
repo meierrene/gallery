@@ -7,17 +7,18 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  background-image: linear-gradient(to bottom right, #e3fafc, #99e9f2);
 }
 
 body {
-  font-family: system-ui;
+  font-family: 'Rubik', sans-serif;
   color: #555;
-  background-color: #f7f7f7;
   min-height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .container {
@@ -27,12 +28,12 @@ body {
 }
 
 .countries {
-  /* margin-bottom: 8rem; */
-  display: flex;
-
   font-size: 2rem;
   opacity: 0;
   transition: opacity 1s;
+  display: grid;
+  margin: 3.6rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .country {
@@ -42,7 +43,8 @@ body {
   width: 30rem;
   border-radius: 0.7rem;
   margin: 0 3rem;
-  /* overflow: hidden; */
+  border: 1px solid #0b7285;
+  overflow: hidden;
 }
 
 .neighbour::before {
@@ -98,17 +100,54 @@ body {
   font-size: 2.4rem;
 }
 
+.primary-heading {
+  font-size: 4.8rem;
+  color: #0c8599;
+  font-family: 'Parisienne', cursive;
+}
+
+.primary-heading span {
+  color: #c92a2a;
+}
+
 .btn-country,
 .btn-back,
 .form__row {
   border: none;
   font-size: 2rem;
-  padding: 2rem 5rem;
   border-radius: 0.7rem;
   color: white;
-  background-color: rgb(31, 124, 124);
+  background-color: #0c8599;
   cursor: pointer;
   text-align: center;
+  margin: 2.4rem;
+  padding: 1.2rem;
+}
+
+.form__row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.input-fields {
+  padding: 0.6rem;
+  font-size: 2.4rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #e3fafc;
+  color: #0b7285;
+}
+
+.btn-country,
+.btn-back {
+  padding: 2rem 5rem;
+  transition: all 0.3s;
+}
+
+.btn-country:hover,
+.btn-back:hover {
+  background-color: #22b8cf;
 }
 
 .images {
@@ -129,11 +168,33 @@ body {
 }
 
 .address {
-  font-size: 2.3rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  color: #0c8599;
+  font-size: 2rem;
+  margin: 1.6rem 6.6rem;
 }
 
 .hidden {
   display: none;
+}
+
+footer {
+  margin: 2.4rem;
+  font-size: 1.6rem;
+  color: #0c8599;
+}
+
+@media (max-width: 1024px) {
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .countries {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .address {
+    font-size: 1.6rem;
+  }
 }
