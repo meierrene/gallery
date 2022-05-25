@@ -33,7 +33,9 @@ body {
   transition: opacity 1s;
   display: grid;
   margin: 3.6rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  column-gap: 2.4rem;
 }
 
 .country {
@@ -42,7 +44,6 @@ body {
   font-size: 1.8rem;
   width: 30rem;
   border-radius: 0.7rem;
-  margin: 0 3rem;
   border: 1px solid #0b7285;
   overflow: hidden;
 }
@@ -63,10 +64,6 @@ body {
 .neighbour {
   transform: scale(0.8) translateY(1rem);
   margin-left: 0;
-}
-
-.country {
-  justify-self: center;
 }
 
 .country__img {
@@ -187,13 +184,19 @@ footer {
   color: #0c8599;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1300px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
   .countries {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 680px) {
   .countries {
     grid-template-columns: repeat(1, 1fr);
   }
