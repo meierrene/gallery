@@ -65,6 +65,10 @@ body {
   margin-left: 0;
 }
 
+.country {
+  justify-self: center;
+}
+
 .country__img {
   width: 30rem;
   height: 17rem;
