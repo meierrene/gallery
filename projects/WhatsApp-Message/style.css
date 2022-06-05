@@ -49,6 +49,7 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .form input {
+  margin: 0.4rem;
   padding: 1rem;
   font-size: 1.8rem;
   border-radius: 9px;
@@ -151,15 +152,6 @@ footer {
 }
 
 @media (max-width: 720px) {
-  .form {
-    padding: 2rem;
-  }
-
-  .form input {
-    padding: 1rem;
-    font-size: 1.8rem;
-  }
-
   .send-btn {
     height: 4rem;
     font-size: 1.8rem;
@@ -167,31 +159,8 @@ footer {
 }
 
 @media (max-width: 670px) {
-  /* .form {
-    padding: 1rem;
-  }
-
-  .form input {
-    padding: 0.6rem;
-    font-size: 1.4rem;
-  } */
-
   .aCountry {
     font-size: 1.2rem;
-  }
-
-  .aCountry img {
-    height: 2.4rem;
-  }
-
-  /* .send-btn {
-    height: 3rem;
-    font-size: 1.4rem;
-  } */
-
-  input:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.4rem rgba(37, 211, 102, 0.5);
   }
 
   footer {
@@ -199,18 +168,10 @@ footer {
   }
 }
 
-@media (max-width: 610px) {
-  /* .form {
-    padding: 0.6rem;
-    gap: 0.8rem;
-  } */
-}
-
 @media (max-width: 580px) {
   .form {
     flex-direction: column;
     padding: 1rem;
-    gap: 0.8rem;
   }
 }
 
