@@ -167,14 +167,14 @@ footer {
 }
 
 @media (max-width: 670px) {
-  .form {
+  /* .form {
     padding: 1rem;
   }
 
   .form input {
     padding: 0.6rem;
     font-size: 1.4rem;
-  }
+  } */
 
   .aCountry {
     font-size: 1.2rem;
@@ -184,10 +184,10 @@ footer {
     height: 2.4rem;
   }
 
-  .send-btn {
+  /* .send-btn {
     height: 3rem;
     font-size: 1.4rem;
-  }
+  } */
 
   input:focus {
     outline: none;
@@ -200,10 +200,10 @@ footer {
 }
 
 @media (max-width: 610px) {
-  .form {
+  /* .form {
     padding: 0.6rem;
     gap: 0.8rem;
-  }
+  } */
 }
 
 @media (max-width: 580px) {
@@ -229,10 +229,6 @@ footer {
   .secundary-heading {
     font-size: 2rem;
   }
-
-  .flex-icon3 {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 315px) {
@@ -242,6 +238,9 @@ footer {
 
   .secundary-heading {
     font-size: 1.6rem;
+  }
+  .flex-icon3 {
+    flex-direction: column;
   }
 
   footer {
