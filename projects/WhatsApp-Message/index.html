@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>WA Message</title>
+  </head>
+  <body>
+    <h1 class="primary-heading">WhatsApp Message</h1>
+    <h2 class="secundary-heading">
+      Send a WhatsApp message without need add as an contact.
+    </h2>
+    <form class="form" target="_blank">
+      <div class="flex-icon2">
+        <span class="plus-char">+</span>
+        <input
+          class="country-code"
+          type="number"
+          min="1"
+          max="999"
+          maxlength="3"
+          placeholder="IDD"
+        />
+        <div class="aCountry hidden"></div>
+      </div>
+      <div class="flex-icon3">
+        <input
+          class="region-code"
+          type="number"
+          maxlength="4"
+          placeholder="DDD"
+        />
+        <input
+          class="phone-number"
+          type="number"
+          maxlength="9"
+          placeholder="Phone number"
+        />
+        <button type="submit" class="send-btn">
+          <i class="fa fa-whatsapp my-float"></i><span>Send</span>
+        </button>
+      </div>
+    </form>
+  </body>
+  <footer>
+    <p>
+      This is an unofficial WhatsApp website not for commercial pruporses.
+      <br />
+      &copy; <span class="aYear"></span>
+      created by René Meier.
+    </p>
+  </footer>
+  <script defer src="script.js"></script>
+</html>
