@@ -203,11 +203,12 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 200%;
+  height: 200%;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
+  overflow: hidden;
 }
 
 @media (max-width: 770px) {
