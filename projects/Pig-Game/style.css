@@ -212,11 +212,11 @@ main {
 
 @media (max-width: 770px) {
   .name {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
 
   .score {
-    font-size: 6rem;
+    font-size: 3.2rem;
   }
 
   .current-label {
@@ -229,22 +229,26 @@ main {
 }
 
 @media (max-width: 680px) {
+  * {
+    box-sizing: border-box;
+  }
   main {
-    flex-direction: column;
-    width: 100%;
     height: 100%;
+    width: 100%;
+    flex-direction: column;
   }
-
   .player {
+    padding: 4rem;
     justify-content: center;
+    gap: 2rem;
   }
 
-  .player--0 {
-    margin-bottom: 1rem;
+  .name {
+    margin-bottom: 0;
   }
 
-  .player--1 {
-    margin-top: -3rem;
+  .score {
+    margin-bottom: 0;
   }
 
   .dice {
@@ -254,7 +258,7 @@ main {
   }
 
   .btn {
-    padding: 0.6rem 1rem;
+    padding: 0.4rem 0.4rem;
     transform: translate(0, 0);
     font-size: 1.4rem;
   }
