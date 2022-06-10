@@ -212,10 +212,6 @@ main {
 
 @media (max-width: 770px) {
   .name {
-    font-size: 2.4rem;
-  }
-
-  .score {
     font-size: 3.2rem;
   }
 
@@ -236,25 +232,33 @@ main {
     height: 100%;
     width: 100%;
     flex-direction: column;
+    border-radius: 0;
   }
   .player {
-    padding: 4rem;
+    padding: 0;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .name {
+    font-size: 2.4rem;
     margin-bottom: 0;
   }
 
   .score {
+    font-size: 3.2rem;
     margin-bottom: 0;
+  }
+
+  .current {
+    padding: 1rem;
   }
 
   .dice {
     top: 50%;
     left: 2rem;
     transform: translateY(-50%);
+    height: 8rem;
   }
 
   .btn {
