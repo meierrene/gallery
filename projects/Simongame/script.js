@@ -5,10 +5,10 @@ const gamePattern = [];
 const userClickedPattern = [];
 let level = 0;
 
-function nextSequence() {
+const nextSequence = () => {
   userClickedPattern.splice(0, userClickedPattern.length);
   level++;
-  $('#level-title').text(`Level ${level}`);
+  $('.level-title').text(`Level ${level}`);
   const randomNumber = Math.floor(Math.random() * 4);
   const randomChosenColour = buttonColours[randomNumber];
   gamePattern.push(randomChosenColour);
@@ -20,42 +20,43 @@ function nextSequence() {
       $(`#${p}`).fadeIn();
     }, 1000 * i);
   });
-  console.log(gamePattern);
-}
+};
 
-function playSound(name) {
+const playSound = name => {
   new Audio(`./sounds/${name}.mp3`).play();
-}
+};
 
-function animatePress(currentColor) {
+const animatePress = currentColor => {
   $(`.${currentColor}`).addClass('pressed');
   setTimeout(() => {
     $(`.${currentColor}`).removeClass('pressed');
   }, 100);
-}
+};
 
-function checkAnswer() {
+const checkAnswer = () => {
   if (userClickedPattern.length === gamePattern.length)
     userClickedPattern.every((val, i) => val === gamePattern[i])
       ? correct()
       : wrong();
-}
+};
 
-function correct() {
+const correct = () => {
   setTimeout(() => {
     nextSequence();
   }, 1000);
-}
+};
 
-function wrong() {
-  $('#level-title').text(`Game Over, Press Any Key to Restart`);
+const wrong = () => {
+  $('.level-title').text(`Game Over, Your score was ${level}`);
   playSound('wrong');
   $('body').css('background-color', 'red');
   setTimeout(() => {
     $('body').css('background-color', '#011f3f');
   }, 500);
   init();
-}
+  $('.start-btn').toggle('hidden');
+  $('.start-btn').text('Play again');
+};
 
 $('.btn').click(e => {
   const userChosenColour = e.target.closest('.btn').getAttribute('id');
@@ -66,15 +67,16 @@ $('.btn').click(e => {
   checkAnswer();
 });
 
-function init() {
+const init = () => {
   level = 0;
-  $('body').one('keydown', () => {
+  $('.start-btn').one('click', () => {
     gamePattern.splice(0, gamePattern.length);
     nextSequence();
     $('body').css('background-color', '011f3f');
+    $('.start-btn').toggle('hidden');
   });
-}
+};
 
-document.querySelector('.aYear').innerHTML = new Date().getFullYear();
+$('.aYear').text(new Date().getFullYear());
 
 init();
