@@ -49,9 +49,9 @@ const correct = () => {
 const wrong = () => {
   $('.level-title').text(`Game Over, Your score was ${level}`);
   playSound('wrong');
-  $('body').css('background-color', 'red');
+  $('html').css('background-color', 'red');
   setTimeout(() => {
-    $('body').css('background-color', '#011f3f');
+    $('html').css('background-color', '#011f3f');
   }, 500);
   init();
   $('.start-btn').toggle('hidden');
