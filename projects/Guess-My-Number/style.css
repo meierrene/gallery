@@ -42,7 +42,7 @@ main {
   color: #eee;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .left {
@@ -50,11 +50,19 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2.4rem;
 }
 
 .right {
   width: 52rem;
   font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.message {
+  margin-bottom: 3.6rem;
 }
 
 h1 {
@@ -99,7 +107,6 @@ h1 {
   width: 25rem;
   text-align: center;
   display: block;
-  margin-bottom: 3rem;
 }
 
 .btn {
@@ -116,18 +123,9 @@ h1 {
   background-color: #ccc;
 }
 
-.message {
-  margin-bottom: 8rem;
-  height: 3rem;
-}
-
-.label-score {
-  margin-bottom: 2rem;
-}
-
 @media (max-width: 640px) {
   main {
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     gap: 4rem;
   }
@@ -141,6 +139,12 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 2.4rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    font-family: inherit;
+    padding: 1.6rem 2.4rem;
   }
 
   h1 {
@@ -157,17 +161,17 @@ h1 {
   }
 
   .message {
-    margin: 2rem 0;
+    margin: 0;
   }
 }
 
 @media (max-width: 400px) {
   h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .right {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .guess {
