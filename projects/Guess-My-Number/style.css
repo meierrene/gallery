@@ -29,7 +29,7 @@ body {
 /* LAYOUT */
 header {
   height: 35vh;
-  border-bottom: 7px solid #eee;
+  /* border-bottom: 7px solid #eee; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +38,8 @@ header {
 }
 
 main {
-  height: 65vh;
+  /* height: 65vh; */
+  margin-top: 4rem;
   color: #eee;
   display: flex;
   align-items: center;
@@ -92,9 +93,6 @@ h1 {
 
 .between {
   font-size: 1.4rem;
-  /* position: absolute; */
-  /* top: 2rem;
-  right: 2rem; */
 }
 
 .guess {
@@ -123,11 +121,21 @@ h1 {
   background-color: #ccc;
 }
 
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  .right {
+    font-size: 1.6rem;
+  }
+}
+
 @media (max-width: 640px) {
   main {
     flex-direction: column;
     justify-content: center;
     gap: 4rem;
+    margin-top: 6rem;
   }
 
   header {
@@ -141,14 +149,16 @@ h1 {
     gap: 2.4rem;
   }
 
+  .number {
+    font-size: 4.8rem;
+    width: 10rem;
+    padding: 2.4rem 0rem;
+  }
+
   .btn {
     font-size: 1.6rem;
     font-family: inherit;
     padding: 1.6rem 2.4rem;
-  }
-
-  h1 {
-    font-size: 3.6rem;
   }
 
   .left {
@@ -166,6 +176,10 @@ h1 {
 }
 
 @media (max-width: 400px) {
+  main {
+    gap: 2.4rem;
+  }
+
   h1 {
     font-size: 2.2rem;
   }
@@ -175,7 +189,14 @@ h1 {
   }
 
   .guess {
-    padding: 2rem;
+    padding: 1.6rem;
     font-size: 3.6rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .between,
+  .right {
+    font-size: 1rem;
   }
 }
