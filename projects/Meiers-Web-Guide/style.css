@@ -12,9 +12,7 @@ body {
   text-align: center;
   /* font-size: 62.5%; */
   background-color: #072a30;
-  /* background: linear-gradient(to top left, #072a30, #000000); */
-  position: relative;
-  line-height: 2.5;
+  line-height: 1.5;
 }
 
 .upper-menu {
@@ -23,37 +21,43 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 6px 16px;
 }
 
 .flags {
+  cursor: pointer;
+  height: 25px;
   display: flex;
   gap: 6px;
 }
 
 .main-title {
-  font-size: 30px;
+  margin-top: 2.4rem;
+  font-size: 2rem;
 }
 
 .main-menu {
-  font-size: 36px;
+  font-size: 2.4rem;
   text-transform: uppercase;
+  margin-bottom: 2.4rem;
 }
 
 .column-container {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 2.4rem;
   flex-wrap: wrap;
+  font-size: 1rem;
+  padding: 16px;
 }
 
 .column-1,
 .column-2,
 .column-3,
 .column-4 {
-  width: 220px;
-  height: auto;
-  box-shadow: 15px 15px 50px #000;
+  width: 340px;
+  /* height: auto; */
+  box-shadow: 0px 2px 20px 2px #000;
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 40px;
@@ -77,6 +81,7 @@ body {
 }
 
 .default-btn {
+  width: 100%;
   color: #999;
   font-size: 20px;
   text-transform: uppercase;
@@ -87,6 +92,10 @@ body {
   margin: 5px;
   border-radius: 10px;
   border: 1px solid #999;
+}
+
+.default-btn img {
+  height: 16px;
 }
 
 .default-btn:hover,
@@ -136,13 +145,16 @@ button:active {
 }
 
 .author {
-  font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
 }
 
 .secret-btn {
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
   opacity: 0;
 }
 
@@ -155,5 +167,24 @@ ion-icon {
 }
 
 footer {
+  position: relative;
+  font-size: 12px;
   padding: 16px;
+}
+
+@media (max-width: 420px) {
+  .time-display {
+    font-size: 14px;
+  }
+
+  .main-title {
+    margin-top: 16px;
+    font-size: 24px;
+  }
+
+  .main-menu {
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
 }

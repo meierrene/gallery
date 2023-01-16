@@ -12,17 +12,23 @@ let defaultLocale = navigator.language || navigator.userLanguage;
 
 document.querySelector('.year').textContent = new Date().getFullYear();
 
+console.log(window.innerWidth >= 420);
 setInterval(() => {
   const now = new Date();
   const options = {
-    second: 'numeric',
-    minute: 'numeric',
-    hour: 'numeric',
     day: 'numeric',
     month: 'numeric',
     year: 'numeric',
     weekday: 'long',
   };
+  if (window.innerWidth >= 420) {
+    const moreOptions = {
+      second: 'numeric',
+      minute: 'numeric',
+      hour: 'numeric',
+    };
+    Object.assign(options, moreOptions);
+  }
   document.querySelector('.time-display').textContent = Intl.DateTimeFormat(
     defaultLocale,
     options
