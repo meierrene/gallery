@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  font-family: sans-serif;
+  text-align: center;
+  /* font-size: 62.5%; */
+  background-color: #072a30;
+  /* background: linear-gradient(to top left, #072a30, #000000); */
+  position: relative;
+  line-height: 2.5;
+}
+
+.upper-menu {
+  background-color: #222;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.flags {
+  display: flex;
+  gap: 6px;
+}
+
+.main-title {
+  font-size: 30px;
+}
+
+.main-menu {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.column-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.column-1,
+.column-2,
+.column-3,
+.column-4 {
+  width: 220px;
+  height: auto;
+  box-shadow: 15px 15px 50px #000;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: #302040;
+}
+
+.column-2 {
+  background-color: #181880;
+}
+
+.column-3 {
+  background-color: #095b6a;
+}
+
+.column-4 {
+  background-color: #17792f;
+}
+
+.hidden {
+  display: none;
+}
+
+.default-btn {
+  color: #999;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s;
+  background-color: rgba(32, 116, 155, 0);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 1px solid #999;
+}
+
+.default-btn:hover,
+.login-btn:hover,
+.logout-btn:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+button:active {
+  transform: translate(1px, 1px);
+}
+
+.column-1:hover,
+.column-2:hover,
+.column-3:hover,
+.column-4:hover {
+  transition: all 0.5s;
+  backdrop-filter: blur(20px);
+  background-color: #3c2850;
+}
+
+.column-2:hover {
+  background-color: #1e1ea0;
+}
+
+.column-3:hover {
+  background-color: #0b7285;
+}
+
+.column-4:hover {
+  background-color: #1d973b;
+}
+
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.758);
+  transition: all 0.2s;
+  backdrop-filter: blur(30px);
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.author {
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+}
+
+.secret-btn {
+  opacity: 0;
+}
+
+.secret-btn:checked {
+  opacity: 1;
+}
+
+ion-icon {
+  color: #fff;
+}
+
+footer {
+  padding: 16px;
+}
