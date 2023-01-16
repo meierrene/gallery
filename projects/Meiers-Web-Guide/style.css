@@ -31,12 +31,12 @@ body {
   gap: 6px;
 }
 
-.main-title {
+h1 {
   margin-top: 2.4rem;
   font-size: 2rem;
 }
 
-.main-menu {
+h2 {
   font-size: 2.4rem;
   text-transform: uppercase;
   margin-bottom: 2.4rem;
@@ -173,16 +173,16 @@ footer {
 }
 
 @media (max-width: 420px) {
-  .time-display {
+  .date-display {
     font-size: 14px;
   }
 
-  .main-title {
+  h1 {
     margin-top: 16px;
     font-size: 24px;
   }
 
-  .main-menu {
+  h2 {
     font-size: 28px;
     text-transform: uppercase;
     margin-bottom: 16px;
