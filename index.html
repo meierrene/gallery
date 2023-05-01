@@ -4,37 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./paypal.css" />
     <title>Meier's Gallery</title>
   </head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      font-size: 62.5%;
-      background-color: #000;
-      font-family: sans-serif;
-    }
-    a:link,
-    a:visited {
-      color: #888;
-      font-size: 2.4rem;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    a:hover,
-    a:active {
-      color: #fff;
-    }
-
-    ul {
-      padding: 2.4rem;
-      line-height: 1.2;
-    }
-  </style>
+  <style></style>
+  <header>
+    <form
+      class="paypal paypal__fixed_right"
+      action="https://www.paypal.com/donate"
+      method="post"
+      target="_top"
+    >
+      <input type="hidden" name="hosted_button_id" value="64CQAVAJP9HKC" />
+      <input
+        type="image"
+        src="https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif"
+        border="0"
+        name="submit"
+        title="PayPal - The safer, easier way to pay online!"
+        alt="Donate with PayPal button"
+      />
+      <span>Support me!</span>
+    </form>
+  </header>
   <body>
     <ul>
       <li><a href="./projects/Bankist App/index.html">Bankist App</a></li>

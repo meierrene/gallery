@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  background-color: #000;
+  font-family: sans-serif;
+}
+a:link,
+a:visited {
+  color: #888;
+  font-size: 2.4rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+a:hover,
+a:active {
+  color: #fff;
+}
+
+ul {
+  padding: 2.4rem;
+  line-height: 1.2;
+}

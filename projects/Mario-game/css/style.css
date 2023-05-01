@@ -43,25 +43,6 @@ body {
   margin-left: 2.4rem;
 }
 
-.paypal {
-  margin-left: auto;
-  background-color: #fff;
-  border-radius: 6px;
-  padding: 3px;
-  margin-right: 1.2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.paypal span {
-  text-transform: uppercase;
-  padding-top: 8px;
-  text-align: center;
-  font-size: 8px;
-  font-weight: 700;
-  color: #000;
-}
-
 .help-icon {
   color: #fff;
   background-color: #333;
