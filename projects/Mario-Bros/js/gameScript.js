@@ -1,4 +1,4 @@
-export const enemy = function () {
+export const enemy = () => {
   return {
     id: 'enemy',
     require: ['pos', 'area', 'sprite', 'patrol'],
@@ -15,7 +15,7 @@ export const enemy = function () {
   };
 };
 
-export const bump = function (offset = 8, speed = 2, stopAtOrigin = true) {
+export const bump = (offset = 8, speed = 2, stopAtOrigin = true) => {
   return {
     id: 'bump',
     require: ['pos'],
@@ -44,14 +44,14 @@ export const bump = function (offset = 8, speed = 2, stopAtOrigin = true) {
   };
 };
 
-export function patrol(distance = 100, speed = 50, dir = 1, obj) {
+export const patrol = (distance = 100, speed = 50, dir = 1, obj) => {
   return {
     id: 'patrol',
     require: ['pos', 'area'],
     startingPos: vec2(0, 0),
     add() {
       this.startingPos = this.pos;
-      this.on('collide', (obj, side) => {
+      this.onCollide((obj, side) => {
         if (side === 'left' || side === 'right') {
           dir = -dir;
         }
@@ -64,4 +64,8 @@ export function patrol(distance = 100, speed = 50, dir = 1, obj) {
       this.move(speed * dir, 0);
     },
   };
-}
+};
+
+export const swing = () => {
+  return {};
+};

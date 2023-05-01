@@ -1,5 +1,7 @@
-import kaboom from 'https://unpkg.com/kaboom/dist/kaboom.mjs'; // CDN
-import { maps, levelCfg } from './mapConfig.js';
+// import kaboom from 'https://unpkg.com/kaboom/dist/kaboom.mjs'; //v3.0
+import kaboom from '../../../node_modules/kaboom/dist/kaboom.mjs';
+import { levelCfg } from './mapConfig.js';
+import { maps } from './maps.js';
 import * as controlProperties from './controlProperties.js';
 
 //=========================================================================
@@ -48,8 +50,6 @@ loadSprite('cloud', 'cloud.png');
 loadSprite('hill', 'hill.png');
 loadSprite('shrubbery', 'shrubbery.png');
 loadSprite('coin', 'coin.png');
-// loadSprite('evil-shroom', 'evil-shroom.png');
-// loadSprite('evil-shroom-cave', 'evil-shroom-cave.png');
 loadSprite('brick', 'brick.png');
 loadSprite('cobblestone', 'cobblestone.png');
 loadSprite('brick-cave', 'brick-cave.png');
@@ -61,20 +61,20 @@ loadSprite('unboxed', 'unboxed.png');
 loadSprite('pipe', 'pipe.png');
 loadSprite('castle', 'castle.png');
 
-function stopMusic(music) {
+const stopMusic = music => {
   music.pause();
   music.currentTime = 0;
-}
+};
 
 //=========================================================================
 // Scene configuration
 //=========================================================================
 
 scene('game', (level, score) => {
-  function updateScore(coins = 0, level) {
+  const updateScore = (coins = 0, level) => {
     controlProperties.coinValue.textContent = `: ${coins}`;
     controlProperties.levelValue.textContent = `Level: ${level + 1}`;
-  }
+  };
 
   updateScore(score, level);
 
@@ -91,20 +91,20 @@ scene('game', (level, score) => {
   const scoreLabel = add([{ value: score }]);
   const player = gameLevel.spawn('p', 1, 10);
 
-  function playerState() {
+  const playerState = () => {
     isBig ? player.bigger() : player.smaller();
-  }
+  };
   playerState();
 
-  function invincibility() {
+  const invincibility = () => {
     isInvincible = true;
     setInterval(
       () => (isInvincible = false),
       controlProperties.INVINCIBILITY_TIME_INTERVAL
     );
-  }
+  };
 
-  function toLose() {
+  const toLose = () => {
     if (isBig) {
       controlProperties.secretBtn.checked ? play('test') : play('power_down');
       player.smaller();
@@ -116,7 +116,7 @@ scene('game', (level, score) => {
       controlProperties.secretBtn.checked ? play('test') : play('death');
       go('lose', { score: scoreLabel.value });
     }
-  }
+  };
 
   //=========================================================================
   // Collision detection logic
@@ -232,8 +232,9 @@ scene('game', (level, score) => {
   onKeyPress(controlProperties.JUMP_KEY, () => {
     if (player.isGrounded()) {
       play(`jump${randi(0, 2)}`, { volume: 0.5 });
-      if (isBig) player.jump(controlProperties.BIG_JUMP_FORCE);
-      else player.jump(controlProperties.JUMP_FORCE);
+      isBig
+        ? player.jump(controlProperties.BIG_JUMP_FORCE)
+        : player.jump(controlProperties.JUMP_FORCE);
     }
   });
 
@@ -244,7 +245,6 @@ scene('game', (level, score) => {
   onKeyRelease(controlProperties.RUN_KEY, () => {
     SPEED = controlProperties.WALK_SPEED;
   });
-  console.log(window.screen.width > 600);
 });
 
 //=========================================================================
@@ -288,11 +288,11 @@ scene('win', ({ score }) => {
 // Pause
 //=========================================================================
 
-function toggleInfo() {
+const toggleInfo = () => {
   play('pause');
   controlProperties.helpContainer.classList.toggle('hidden');
   controlProperties.overlay.classList.toggle('hidden');
-}
+};
 
 controlProperties.resetBtn.addEventListener('click', function () {
   init();
@@ -302,7 +302,7 @@ controlProperties.resetBtn.addEventListener('click', function () {
 // Init
 //=========================================================================
 
-function init() {
+const init = () => {
   controlProperties.helpIcon.addEventListener('click', toggleInfo);
   controlProperties.closeModal.addEventListener('click', toggleInfo);
   controlProperties.overlay.addEventListener('click', toggleInfo);
@@ -316,9 +316,9 @@ function init() {
     },
     { once: true }
   );
-}
+};
 
-function nextLevel(levelGame = 0, scoreGame = 0) {
+const nextLevel = (levelGame = 0, scoreGame = 0) => {
   controlProperties.loadingScreen.classList.remove('hidden');
   controlProperties.loadingContent.textContent = `
   Level: ${levelGame + 1}
@@ -331,14 +331,14 @@ function nextLevel(levelGame = 0, scoreGame = 0) {
     if (levelMusic) stopMusic(levelMusic);
 
     levelMusic = new Audio(
-      levelGame === 0 || levelGame === 4 || level === 5
+      levelGame === 0 || levelGame === 4 || levelGame === 5
         ? './src/audios/levelGround.mp3'
         : './src/audios/levelCave.mp3'
     );
     levelMusic.loop = true;
     go('game', levelGame, scoreGame);
   }, 1500);
-}
+};
 
 document.querySelector(
   '.version'

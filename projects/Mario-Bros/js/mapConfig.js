@@ -1,116 +1,6 @@
 import { bump, enemy, patrol } from './gameScript.js';
 import { mario, goomba, goombaCave } from './sprites.js';
-
-export const maps = [
-  [
-    '                                                                         ',
-    '                                                                         ',
-    '           l        l               l             l       l            l ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                     =*==%=                                              ',
-    '                                                                         ',
-    '                                                  $$$$$$$                ',
-    'k    $$$$$      k   j      j        j  ^ ^k^ ^ ^ ^$$$$$$$  j        k   -',
-    'ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc',
-    'ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc',
-  ],
-  [
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                      $$$                                ',
-    '                                      vvv                                ',
-    '                    ***%***                                              ',
-    '                                !!                       v               ',
-    '                                !!                      vvv              ',
-    '     $$$$$         @   @        !!                     vvvvv    $$$$$$  -',
-    '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                 !!!!!!!!!!!!!!!!!!!!!!',
-    '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                 !!!!!!!!!!!!!!!!!!!!!!',
-  ],
-  [
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                          !!!!                           ',
-    '                                ***!              $$$$$                  ',
-    '                                                  vvvvv                  ',
-    '                                          !!!!    vvvvv    $$$           ',
-    '                                %!!!              vvvvv    vvv   $$$     ',
-    '     $$$                                          vvvvv          vvv     ',
-    '     $$$                 @    @                   vvvvv                 -',
-    '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    !!!!!!!!!!!!!                !!',
-    '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    !!!!!!!!!!!!!                !!',
-  ],
-  [
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                                                                         ',
-    '                        $$$       $$$         $$$         $$$            ',
-    '                        vvv       vvv         vvv         vvv            ',
-    '                                                                       $$',
-    '                   $$$                                                 $$',
-    '                   vvv                                                 $$',
-    '                                                                       $$',
-    '                $$$                                                    $$',
-    '          %     vvv                                                    $$',
-    '  $$$$$                                                                  ',
-    '  $$$$$@  @                                                             -',
-    '!!!!!!!!!!!!!!!!                                                       !!',
-    '!!!!!!!!!!!!!!!!                                                       !!',
-  ],
-  [
-    '                                                                                                                                                                                                                                                                   ',
-    '                                                                                                                                                                                                                                                                   ',
-    '          l        l               l             l       l            l           l        l               l             l       l            l           l        l               l             l                    l                      l                     ',
-    '                                                                                                                                                                                                                                                                   ',
-    '                                                                                                                                                                                                                                                                   ',
-    '                                                                                                                                                                                                                                                                   ',
-    '                                                                                                                                                                                                                                                                   ',
-    '                                                                                                    $$$                                                                                                                                                            ',
-    '                                                                                            $$$     ccc     ccc                                                                                                                                                    ',
-    '                                                                                     $$$    ccc                                      j                                                                      ccc        ccc                                         ',
-    '                     ****%*                                                   $$$    ccc                                          ***%*******                                                                                                           $$$$$      ',
-    '                                        c  c                                  ccc                                                                               ccc       ccc                    ccc                                                    $$$$$      ',
-    '                                       cc  cc            c   c         $$$                                                                           ccc                             ccc                                                                $$$$$      ',
-    '    k    j        k   j  ^  ^  ^k     ccc  ccc          cc   cc        ccc                                                  j  ^ k       j^                                                                                         k  j  ^ ^ ^ ^k^ ^  j$$$$$k    -',
-    'ccccccccccccccccccccccccccccccccccccccccc  ccccc      cccc   ccccc                                                        cccccccccccccccccccccc                                                                             cccccccccccccccccccccccccccccccccccccc',
-    'ccccccccccccccccccccccccccccccccccccccccc  ccccc      cccc   ccccc                                                        cccccccccccccccccccccc                                                                             cccccccccccccccccccccccccccccccccccccc',
-  ],
-  [
-    '                                                                                                                                                                                   ',
-    '                                                                                                                                                                                   ',
-    '          l        l               l             l       l            l           l        l               l             ',
-    '                                                                                                                         ',
-    '                                                                                                                         ',
-    '                                                                                                                         ',
-    '                                                                                                                         ',
-    '                                                                                                                         ',
-    '                                                                                                                         ',
-    '                                                                                                                         ',
-    '                                                                                                                         ',
-    '                                                                                                                         ',
-    '                                                                                                                         ',
-    '    k            k^ ^ ^ ^j^ ^ ^ ^ ^k^ ^ ^ ^j^ ^ ^ ^k^ ^ ^k^ ^ ^ ^j^ ^ ^ ^ ^ ^k^ ^ ^j^k^ ^ ^   j  ^ ^ ^ ^k^ ^  j     k   H',
-    'ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc',
-    'ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc',
-  ],
-];
+import { maps } from './maps.js';
 
 export const levelCfg = {
   width: 20,
@@ -200,7 +90,7 @@ export const levelCfg = {
   l: () => [sprite('cloud'), scale(2), z(-2)],
 };
 
-function getCoins(selMap) {
+const coinsOnLevel = selMap => {
   const query = selMap.join('').trim().split('');
   let amountCoins = 0;
   query.forEach(q => {
@@ -208,6 +98,6 @@ function getCoins(selMap) {
     q === '$' ? amountCoins++ : '';
   });
   return amountCoins;
-}
+};
 
-export const totalAmount = getCoins(maps);
+export const totalAmount = coinsOnLevel(maps);

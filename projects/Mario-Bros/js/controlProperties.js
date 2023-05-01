@@ -1,6 +1,6 @@
 import { totalAmount } from './mapConfig.js';
 
-export const gameVersion = 1.3;
+export const gameVersion = 1.31;
 export const coinValue = document.querySelector('.coin-value');
 export const levelValue = document.querySelector('.level-value');
 export const resetContainer = document.querySelector('.reset-container');
