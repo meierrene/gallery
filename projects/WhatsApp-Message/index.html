@@ -9,45 +9,39 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+
     <title>WA Message</title>
   </head>
   <body>
     <h1 class="primary-heading">WhatsApp Message</h1>
     <h2 class="secundary-heading">
-      Send a WhatsApp message without needing to add as a contact.
+      Send a WhatsApp message without need add as an contact.
     </h2>
     <form class="form" target="_blank">
       <div class="flex-icon2">
         <span class="plus-char">+</span>
         <input
           class="country-code"
-          type="text"
-          pattern="\d{1,3}"
-          placeholder="IDD"
+          type="number"
+          min="1"
+          max="999"
           maxlength="3"
-          title="Enter up to 3 digits"
-          required
+          placeholder="IDD"
         />
         <div class="aCountry hidden"></div>
       </div>
       <div class="flex-icon3">
         <input
           class="region-code"
-          type="text"
-          pattern="\d{1,4}"
-          placeholder="DDD"
+          type="number"
           maxlength="4"
-          title="Enter up to 4 digits"
-          required
+          placeholder="DDD"
         />
         <input
           class="phone-number"
-          type="text"
-          pattern="\d{1,9}"
-          placeholder="Phone number"
+          type="number"
           maxlength="9"
-          title="Enter up to 9 digits"
-          required
+          placeholder="Phone number"
         />
       </div>
       <button type="submit" class="send-btn">
@@ -56,13 +50,12 @@
     </form>
     <footer>
       <p>
-        This is an unofficial WhatsApp website not for commercial purposes.
+        This is an unofficial WhatsApp website not for commercial pruporses.
         <br />
-        &copy; <span class="aYear"></span> created by René Meier.
+        &copy; <span class="aYear"></span>
+        created by René Meier.
       </p>
     </footer>
-    <script defer src="script.js"></script>
   </body>
+  <script defer src="script.js"></script>
 </html>
-
-<!-- git push meiersGallery -->
