@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Press Start 2P', sans-serif;
+  color: #eee;
+  background-color: #222;
+  /* background-color: #60b347; */
+}
+
+/* LAYOUT */
+header {
+  height: 35vh;
+  /* border-bottom: 7px solid #eee; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.4rem;
+  gap: 2.4rem;
+}
+
+main {
+  /* height: 65vh; */
+  margin-top: 4rem;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  width: 52rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.right {
+  width: 52rem;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.message {
+  margin-bottom: 3.6rem;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  width: 100%;
+}
+
+.number {
+  background: #eee;
+  color: #333;
+  font-size: 6rem;
+  width: 15rem;
+  padding: 3rem 0rem;
+  text-align: center;
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* left: 50%; */
+  /* transform: translate(-50%, 50%); */
+}
+
+.top-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.between {
+  font-size: 1.4rem;
+}
+
+.guess {
+  background: none;
+  border: 4px solid #eee;
+  font-family: inherit;
+  color: inherit;
+  font-size: 5rem;
+  padding: 2.5rem;
+  width: 25rem;
+  text-align: center;
+  display: block;
+}
+
+.btn {
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 2rem 3rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ccc;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  .right {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 6rem;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  .number {
+    font-size: 4.8rem;
+    width: 10rem;
+    padding: 2.4rem 0rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    font-family: inherit;
+    padding: 1.6rem 2.4rem;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .message {
+    margin: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    gap: 2.4rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .right {
+    font-size: 1.4rem;
+  }
+
+  .guess {
+    padding: 1.6rem;
+    font-size: 3.6rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .between,
+  .right {
+    font-size: 1rem;
+  }
+}

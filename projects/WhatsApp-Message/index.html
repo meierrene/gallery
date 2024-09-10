@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>WA Message</title>
+  </head>
+  <body>
+    <h1 class="primary-heading">WhatsApp Message</h1>
+    <h2 class="secundary-heading">
+      Send a WhatsApp message without needing to add as a contact.
+    </h2>
+    <form class="form" target="_blank">
+      <div class="flex-icon2">
+        <span class="plus-char">+</span>
+        <input
+          class="country-code"
+          type="text"
+          pattern="\d{1,3}"
+          placeholder="IDD"
+          maxlength="3"
+          title="Enter up to 3 digits"
+          required
+        />
+        <div class="aCountry hidden"></div>
+      </div>
+      <div class="flex-icon3">
+        <input
+          class="region-code"
+          type="text"
+          pattern="\d{1,4}"
+          placeholder="DDD"
+          maxlength="4"
+          title="Enter up to 4 digits"
+          required
+        />
+        <input
+          class="phone-number"
+          type="text"
+          pattern="\d{1,9}"
+          placeholder="Phone number"
+          maxlength="9"
+          title="Enter up to 9 digits"
+          required
+        />
+      </div>
+      <button type="submit" class="send-btn">
+        <i class="fa fa-whatsapp my-float"></i><span>Send</span>
+      </button>
+    </form>
+    <footer>
+      <p>
+        This is an unofficial WhatsApp website not for commercial purposes.
+        <br />
+        &copy; <span class="aYear"></span> created by René Meier.
+      </p>
+    </footer>
+    <script defer src="script.js"></script>
+  </body>
+</html>
+
+<!-- git push meiersGallery -->

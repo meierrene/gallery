@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unofficial Mario Bros Experimental Game</title>
+    <link rel="icon" type="image/icon" href="src/img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <link rel="stylesheet" href="../../paypal.css" />
+  </head>
+  <body>
+    <nav class="game-header">
+      <img src="src/img/coin-icon.png" class="coin-img" />
+      <div class="coin-value">: 0</div>
+      <div class="level-value">Level: 1</div>
+      <form
+        class="paypal"
+        action="https://www.paypal.com/donate"
+        method="post"
+        target="_top"
+      >
+        <input type="hidden" name="hosted_button_id" value="64CQAVAJP9HKC" />
+        <input
+          type="image"
+          src="https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif"
+          border="0"
+          name="submit"
+          title="PayPal - The safer, easier way to pay online!"
+          alt="Donate with PayPal button"
+        />
+        <span>Support me!</span>
+      </form>
+      <div class="help-icon">❔</div>
+    </nav>
+    <section>
+      <canvas class="game-screen"><span>&#8203;</span></canvas>
+      <div class="reset-container">
+        <span class="reset-text"
+          >Game not loaded. <br />
+          Something went wrong!
+          <br />Please check if you are still online!</span
+        >
+        <div class="reset-btn hidden"></div>
+      </div>
+      <div class="low-res-screen">
+        <p>
+          I'm really sorry.<br />But it is not supported for phones and tablets.
+        </p>
+      </div>
+
+      <div class="controls">
+        <img src="src/img/analog_stick.png" class="stick-img" />
+        <div class="control-stick">
+          <button class="key-up">Up</button>
+          <button class="key-left">Left</button>
+          <button class="key-right">Right</button>
+          <button class="key-down">Down</button>
+        </div>
+        <img src="src/img/blank_button.png" class="button-img1" />
+        <img src="src/img/blank_button.png" class="button-img2" />
+        <div class="control-buttons">
+          <button class="key-run">Run</button>
+          <button class="key-jump">Jump</button>
+        </div>
+      </div>
+      <div class="help-container hidden">
+        <button class="close-modal">&times;</button>
+        <p>Help commands:</p>
+        <p>a,d: control directions</p>
+        <p>shift: hold to run</p>
+        <p>space: jump</p>
+        <p>s: enter the pipe to go next level</p>
+      </div>
+      <div class="overlay hidden"></div>
+      <div class="loading-screen hidden">
+        <span class="loading-content">Loading screen...</span>
+      </div>
+    </section>
+    <footer>
+      <span class="version"></span> <span class="aYear"></span> Game created by
+      <a
+        href="https://www.linkedin.com/in/ren%C3%A9-meier-1627b9166/"
+        target="_black"
+        >René Meier.</a
+      >
+      <span> Not for commercial pruposes</span
+      ><input type="checkbox" class="secret-btn" />
+    </footer>
+  </body>
+  <script type="module" defer src="js/gameIndex.js"></script>
+</html>

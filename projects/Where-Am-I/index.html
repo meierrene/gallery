@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Parisienne&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+
+    <script defer src="script.js"></script>
+    <title>Where am I?</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="countries"></div>
+      <h1 class="primary-heading">Where am I<span>?</span></h1>
+      <p class="address hidden">Searching address...</p>
+      <div class="form__row">
+        <label class="form__label">Type here the desired coordenates</label
+        ><label class="form__label">
+          or leave in blank to search via GPS your current location</label
+        >
+        <input
+          class="input--latitude input-fields"
+          type="number"
+          placeholder="Latitude e.g.: -12.34"
+        />
+        <input
+          class="input--longitude input-fields"
+          type="number"
+          placeholder="Longitude e.g.: -123.45"
+        />
+      </div>
+      <br />
+      <button class="btn-country">Find me!</button>
+      <br />
+      <button class="btn-back hidden">Go back</button>
+      <div class="images"></div>
+    </main>
+    <footer>Copyright &copy; <span class="aYear"></span></footer>
+  </body>
+</html>

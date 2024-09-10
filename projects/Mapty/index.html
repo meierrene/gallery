@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <!-- <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.googlemap/1.5.1/jquery.googlemap.js"
+    ></script> -->
+
+    <script defer src="script.js"></script>
+    <title>mapty // Map your workouts</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <img src="logo.png" alt="Logo" class="logo" />
+
+      <ul class="workouts">
+        <form class="form hidden">
+          <div class="form__row">
+            <label class="form__label">Type</label>
+            <select class="form__input form__input--type">
+              <option value="running">Running</option>
+              <option value="cycling">Cycling</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label">Distance</label>
+            <input class="form__input form__input--distance" placeholder="km" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Duration</label>
+            <input
+              class="form__input form__input--duration"
+              placeholder="min"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Cadence</label>
+            <input
+              class="form__input form__input--cadence"
+              placeholder="step/min"
+            />
+          </div>
+          <div class="form__row form__row--hidden">
+            <label class="form__label">Elev Gain</label>
+            <input
+              class="form__input form__input--elevation"
+              placeholder="meters"
+            />
+          </div>
+          <button class="form__btn">OK</button>
+        </form>
+
+        <!-- <li class="workout workout--running" data-id="1234567890">
+          <h2 class="workout__title">Running on April 27 (HTML Preview)</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🏃‍♂️</span>
+            <span class="workout__value" id="dist">10</span>
+            <span class="workout__unit">km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value" id="dur">60</span>
+            <span class="workout__unit">min</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">6</span>
+            <span class="workout__unit">min/km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">🦶🏼</span>
+            <span class="workout__value">250</span>
+            <span class="workout__unit">spm</span>
+          </div>
+          <button class="edit-btn disabled" id="999">Edit</button>
+          <button class="delete-btn disabled" id="999">Delete</button>
+        </li>
+
+        <li class="workout workout--cycling" data-id="1234567891">
+          <h2 class="workout__title">Running on April 27 (HTML Preview)</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🚴‍♀️</span>
+            <span class="workout__value" id="dist">10</span>
+            <span class="workout__unit">km</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value" id="dur">60</span>
+            <span class="workout__unit">min</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">30</span>
+            <span class="workout__unit">km/h</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⛰</span>
+            <span class="workout__value">500</span>
+            <spanF class="workout__unit">m</spanF>
+          </div>
+          <button class="edit-btn disabled" id="998">Edit</button>
+          <button class="delete-btn disabled" id="998">Delete</button>
+        </li> -->
+      </ul>
+      <br />
+      <div class="footer-btns">
+        <button class="reset-btn">Reset</button>
+        <button class="sort-btn disabled">Sort</button>
+        <button class="fit--markers--btn disabled">Fit markers</button>
+      </div>
+
+      <p class="copyright">
+        &copy; Copyright by
+        <a
+          class="twitter-link"
+          target="_blank"
+          href="https://twitter.com/jonasschmedtman"
+          >Jonas Schmedtmann</a
+        >. Use for learning or your portfolio. Don't use to teach. Don't claim
+        as your own.<br />
+        Enhanced by
+        <a
+          class="meier-linkedin"
+          href="https://www.linkedin.com/in/ren%C3%A9-meier-1627b9166/"
+          >René Meier</a
+        >
+        (WORK IN PROGRESS), enjoy it!
+      </p>
+    </div>
+
+    <div id="map"></div>
+  </body>
+</html>
