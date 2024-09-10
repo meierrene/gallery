@@ -43,8 +43,8 @@ loadSound('stage_clear', 'stage_clear.wav');
 loadSound('mushroom_appears', 'mushroom_appears.wav');
 
 loadRoot('./src/img/');
-loadAseprite('mario', 'Mario.png', 'Mario.json');
-loadAseprite('enemies', 'Enemies.png', 'Enemies.json');
+loadAseprite('mario', 'mario.png', 'mario.json');
+loadAseprite('enemies', 'enemies.png', 'enemies.json');
 loadSprite('bg1', 'bg1.png');
 loadSprite('cloud', 'cloud.png');
 loadSprite('hill', 'hill.png');
